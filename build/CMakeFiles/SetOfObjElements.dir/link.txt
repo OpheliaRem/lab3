@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSetOfObjElements.a CMakeFiles/SetOfObjElements.dir/SetOfObjElements.c.o
+/usr/bin/ranlib libSetOfObjElements.a

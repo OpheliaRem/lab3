@@ -1,0 +1,114 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "lab3",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ListOfFaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ListOfFaces-Debug-bf069ca8e545f7bf0e71.json",
+					"name" : "ListOfFaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ListOfNormals::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ListOfNormals-Debug-07252c27157f54725358.json",
+					"name" : "ListOfNormals",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ListOfTextures::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ListOfTextures-Debug-05d8ac111a31f6d3b384.json",
+					"name" : "ListOfTextures",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ListOfVertices::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ListOfVertices-Debug-1d0efaf8413c344d1ec3.json",
+					"name" : "ListOfVertices",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ObjParametersTuple::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ObjParametersTuple-Debug-d0189fd4eaf526aacd40.json",
+					"name" : "ObjParametersTuple",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lab3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lab3-Debug-96531d680bbb1ebcdea0.json",
+					"name" : "lab3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "my_obj_parser::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-my_obj_parser-Debug-9d901a66d1616606bf27.json",
+					"name" : "my_obj_parser",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/artem/programming/c/lab3/build",
+		"source" : "/home/artem/programming/c/lab3"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

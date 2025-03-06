@@ -1,0 +1,2 @@
+/usr/bin/ar qc libObjParametersTuple.a CMakeFiles/ObjParametersTuple.dir/ObjParametersTuple.c.o
+/usr/bin/ranlib libObjParametersTuple.a

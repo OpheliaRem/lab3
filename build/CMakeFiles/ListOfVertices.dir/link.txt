@@ -1,0 +1,2 @@
+/usr/bin/ar qc libListOfVertices.a CMakeFiles/ListOfVertices.dir/lists/ListOfVertices.c.o
+/usr/bin/ranlib libListOfVertices.a

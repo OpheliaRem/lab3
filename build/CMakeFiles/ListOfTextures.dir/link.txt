@@ -1,0 +1,2 @@
+/usr/bin/ar qc libListOfTextures.a CMakeFiles/ListOfTextures.dir/lists/ListOfTextures.c.o
+/usr/bin/ranlib libListOfTextures.a

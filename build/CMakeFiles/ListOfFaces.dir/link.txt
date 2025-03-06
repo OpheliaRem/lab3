@@ -1,0 +1,2 @@
+/usr/bin/ar qc libListOfFaces.a CMakeFiles/ListOfFaces.dir/lists/ListOfFaces.c.o
+/usr/bin/ranlib libListOfFaces.a

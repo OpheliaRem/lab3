@@ -1,0 +1,9 @@
+/home/artem/programming/c/lab3/build/CMakeFiles/my_obj_parser.dir
+/home/artem/programming/c/lab3/build/CMakeFiles/ListOfVertices.dir
+/home/artem/programming/c/lab3/build/CMakeFiles/ListOfTextures.dir
+/home/artem/programming/c/lab3/build/CMakeFiles/ListOfFaces.dir
+/home/artem/programming/c/lab3/build/CMakeFiles/ListOfNormals.dir
+/home/artem/programming/c/lab3/build/CMakeFiles/ObjParametersTuple.dir
+/home/artem/programming/c/lab3/build/CMakeFiles/lab3.dir
+/home/artem/programming/c/lab3/build/CMakeFiles/edit_cache.dir
+/home/artem/programming/c/lab3/build/CMakeFiles/rebuild_cache.dir

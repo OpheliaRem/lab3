@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/lab3.dir/main.c.o -o lab3  /usr/lib/x86_64-linux-gnu/libglut.so /usr/lib/x86_64-linux-gnu/libGL.so -lGLU libmy_obj_parser.a libListOfVertices.a libListOfTextures.a libListOfFaces.a libListOfNormals.a libObjParametersTuple.a -lm 

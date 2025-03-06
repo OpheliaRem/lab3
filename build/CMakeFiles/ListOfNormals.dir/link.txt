@@ -1,0 +1,2 @@
+/usr/bin/ar qc libListOfNormals.a CMakeFiles/ListOfNormals.dir/lists/ListOfNormals.c.o
+/usr/bin/ranlib libListOfNormals.a
