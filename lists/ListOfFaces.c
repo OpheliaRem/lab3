@@ -31,8 +31,48 @@ void add_in_list_of_faces(ListOfFaces* list, const Face* face) {
 }
 
 void free_list_of_faces(ListOfFaces* list) {
-    for (int i = 0; i < list->size; ++i) {
-        free(list->faces[i].vertices);
+    if (list->faces == NULL) {
+        return;
     }
+
+    if (list->faces->tuple_of_face_indexes != NULL) {
+
+        if (list->faces->tuple_of_face_indexes->normals_indexes != NULL) {
+            free(list->faces->tuple_of_face_indexes->normals_indexes);
+            list->faces->tuple_of_face_indexes->normals_indexes = NULL;
+        }
+
+        if (list->faces->tuple_of_face_indexes->textures_indexes != NULL) {
+            free(list->faces->tuple_of_face_indexes->textures_indexes);
+            list->faces->tuple_of_face_indexes->textures_indexes = NULL;
+        }
+
+        if (list->faces->tuple_of_face_indexes->vertices_indexes != NULL) {
+            free(list->faces->tuple_of_face_indexes->vertices_indexes);
+            list->faces->tuple_of_face_indexes->vertices_indexes = NULL;
+        }
+
+        free(list->faces->tuple_of_face_indexes);
+        list->faces->tuple_of_face_indexes = NULL;
+    }
+
+    for (int i = 0; i < list->size; ++i) {
+        if (list->faces[i].vertices != NULL) {
+            free(list->faces[i].vertices);
+            list->faces[i].vertices = NULL;
+        }
+
+        if (list->faces[i].textures != NULL) {
+            free(list->faces[i].textures);
+            list->faces[i].textures = NULL;
+        }
+
+        if (list->faces[i].normals != NULL) {
+            free(list->faces[i].normals);
+            list->faces[i].normals = NULL;
+        }
+    }
+    
     free(list->faces);
+    list->faces = NULL;
 }

@@ -4,6 +4,8 @@
 CMakeFiles/ListOfFaces.dir/lists/ListOfFaces.c.o
  /home/artem/programming/c/lab3/lists/ListOfFaces.c
  /home/artem/programming/c/lab3/lists/ListOfFaces.h
+ /home/artem/programming/c/lab3/lists/ListOfNormals.h
+ /home/artem/programming/c/lab3/lists/ListOfTextures.h
  /home/artem/programming/c/lab3/lists/ListOfVertices.h
  /usr/include/GL/gl.h
  /usr/include/GL/glext.h

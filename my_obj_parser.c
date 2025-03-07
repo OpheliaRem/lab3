@@ -138,7 +138,7 @@ void parse_vertex_string(char* string, ObjParametersTuple* tuple) {
 }
 
 void parse_texture_string(char* string, ObjParametersTuple* tuple) {
-    ++string;
+    string += 2;
 
     GLfloat values[2];
     for (int i = 0; i < 2; ++i) {
@@ -157,34 +157,95 @@ void parse_texture_string(char* string, ObjParametersTuple* tuple) {
 void parse_face_string(char* string, ObjParametersTuple* tuple) {
     ++string;
 
-    int number_of_vertices_to_connect = number_of_slashes(string) / 2;
-    int* indexes = (int*)malloc(number_of_vertices_to_connect * sizeof(int));
-
-    for (int j = 0; *string != '\n' && j < number_of_vertices_to_connect; ++j) {
-        ++string;
-
-        indexes[j] = parse_int_number(&string) - 1;
-        
-        while (*string != ' ' && *string != '\n') {
-            ++string;
-        }
-    }
-
     Face face;
-    face.number_of_vertices = number_of_vertices_to_connect;
-    face.vertices = (Vertex*)malloc(face.number_of_vertices * sizeof(Vertex));
+
+    define_face_parameters(&string, &face);
+
+    int* vertices_indexes = face.tuple_of_face_indexes->vertices_indexes;
+    int* textures_indexes = face.tuple_of_face_indexes->textures_indexes;
+    int* normals_indexes = face.tuple_of_face_indexes->normals_indexes;
 
     for (int i = 0; i < face.number_of_vertices; ++i) {
-        face.vertices[i] = tuple->list_of_vertices->vertices[indexes[i]];
+        face.vertices[i] = tuple->list_of_vertices->vertices[vertices_indexes[i]];
+    }
+
+    for (int i = 0; i < face.number_of_textures; ++i) {
+        face.textures[i] = tuple->list_of_textures->textures[textures_indexes[i]];
+    }
+
+    for (int i = 0; i < face.number_of_normals; ++i) {
+        face.normals[i] = tuple->list_of_normals->normals[normals_indexes[i]];
     }
     
     add_in_list_of_faces(tuple->list_of_faces, &face);
+}
 
-    free(indexes);
+void define_face_parameters(char** string, Face* face) {
+
+    bool has_textures = string_has_textures(*string);
+    bool has_normals = string_has_normals(*string);
+
+    face->number_of_vertices = number_of_slashes(*string) / 2;
+    face->number_of_textures = has_textures ? face->number_of_vertices : 0;
+    face->number_of_normals = has_normals ? face->number_of_vertices : 0;
+
+    face->vertices = (Vertex*)malloc(face->number_of_vertices * sizeof(Vertex));
+    face->textures = (Texture*)malloc(face->number_of_textures * sizeof(Texture));
+    face->normals = (Normal*)malloc(face->number_of_normals * sizeof(Normal));
+
+    face->tuple_of_face_indexes = (TupleOfFaceIndexes*)malloc(sizeof(TupleOfFaceIndexes));
+    
+    face->tuple_of_face_indexes->vertices_indexes = 
+        (int*)malloc(face->number_of_vertices * sizeof(int));
+
+    if (has_textures) {
+        face->tuple_of_face_indexes->textures_indexes = 
+            (int*)malloc(face->number_of_textures * sizeof(int));
+    }
+
+    if (has_normals) {
+        face->tuple_of_face_indexes->normals_indexes = 
+            (int*)malloc(face->number_of_normals * sizeof(int));
+    }
+
+    for (int i = 0; i < face->number_of_vertices; ++i) {
+        ++(*string);
+
+        face->tuple_of_face_indexes->vertices_indexes[i] = parse_int_number(string) - 1;
+
+        if (!has_textures && !has_normals) {
+            while (**string != ' ' && **string != '\n') {
+                ++(*string);
+            }
+            continue;
+        }
+
+        ++(*string);
+        if (has_textures) {
+            face->tuple_of_face_indexes->textures_indexes[i] = parse_int_number(string) - 1;
+        }
+
+        ++(*string);
+        if (has_normals) {
+            face->tuple_of_face_indexes->normals_indexes[i] = parse_int_number(string) - 1;
+        }
+    }
+}
+
+bool string_has_textures(char* string) {
+    while (*(string++) != '/');
+    return *string != '/';
+}
+
+bool string_has_normals(char* string) {
+    for (int i = 0; i < 2; ++i) {
+        while (*(string++) != '/');
+    }
+    return *string != ' ';
 }
 
 void parse_normal_string(char* string, ObjParametersTuple* tuple) {
-    ++string;
+    string += 2;
 
     GLfloat values[3];
     for (int i = 0; i < 3; ++i) {

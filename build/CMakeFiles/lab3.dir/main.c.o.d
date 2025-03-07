@@ -76,4 +76,6 @@ CMakeFiles/lab3.dir/main.c.o: /home/artem/programming/c/lab3/main.c \
  /home/artem/programming/c/lab3/lists/ListOfTextures.h \
  /home/artem/programming/c/lab3/lists/ListOfFaces.h \
  /home/artem/programming/c/lab3/lists/ListOfVertices.h \
+ /home/artem/programming/c/lab3/lists/ListOfTextures.h \
+ /home/artem/programming/c/lab3/lists/ListOfNormals.h \
  /home/artem/programming/c/lab3/lists/ListOfNormals.h

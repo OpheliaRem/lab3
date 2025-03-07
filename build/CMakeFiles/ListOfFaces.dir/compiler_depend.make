@@ -3,6 +3,8 @@
 
 CMakeFiles/ListOfFaces.dir/lists/ListOfFaces.c.o: /home/artem/programming/c/lab3/lists/ListOfFaces.c \
   /home/artem/programming/c/lab3/lists/ListOfFaces.h \
+  /home/artem/programming/c/lab3/lists/ListOfNormals.h \
+  /home/artem/programming/c/lab3/lists/ListOfTextures.h \
   /home/artem/programming/c/lab3/lists/ListOfVertices.h \
   /usr/include/GL/gl.h \
   /usr/include/GL/glext.h \
@@ -77,23 +79,13 @@ CMakeFiles/ListOfFaces.dir/lists/ListOfFaces.c.o: /home/artem/programming/c/lab3
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
 
-/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
-
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
-
-/usr/include/x86_64-linux-gnu/bits/wchar.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
@@ -107,13 +99,15 @@ CMakeFiles/ListOfFaces.dir/lists/ListOfFaces.c.o: /home/artem/programming/c/lab3
 
 /usr/include/GL/gl.h:
 
-/usr/include/x86_64-linux-gnu/bits/types.h:
-
-/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
+/home/artem/programming/c/lab3/lists/ListOfTextures.h:
 
 /usr/include/stdlib.h:
 
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+
+/usr/include/stdio.h:
 
 /home/artem/programming/c/lab3/lists/ListOfFaces.c:
 
@@ -127,9 +121,25 @@ CMakeFiles/ListOfFaces.dir/lists/ListOfFaces.c.o: /home/artem/programming/c/lab3
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
+/home/artem/programming/c/lab3/lists/ListOfNormals.h:
+
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
 /usr/include/alloca.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
+
+/home/artem/programming/c/lab3/lists/ListOfVertices.h:
+
+/usr/include/stdint.h:
+
+/usr/include/x86_64-linux-gnu/bits/timesize.h:
+
+/usr/include/features-time64.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
@@ -147,19 +157,19 @@ CMakeFiles/ListOfFaces.dir/lists/ListOfFaces.c.o: /home/artem/programming/c/lab3
 
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
 
-/usr/include/features-time64.h:
+/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
+/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
-/home/artem/programming/c/lab3/lists/ListOfVertices.h:
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
-/usr/include/stdint.h:
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
 
-/usr/include/x86_64-linux-gnu/bits/timesize.h:
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
-/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
-/usr/include/stdio.h:
+/usr/include/x86_64-linux-gnu/bits/types.h:
 
 /usr/include/stdc-predef.h:
 
@@ -172,10 +182,6 @@ CMakeFiles/ListOfFaces.dir/lists/ListOfFaces.c.o: /home/artem/programming/c/lab3
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
-
-/usr/include/x86_64-linux-gnu/sys/cdefs.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 

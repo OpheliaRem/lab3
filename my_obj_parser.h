@@ -35,6 +35,11 @@ void parse_texture_string(char* string, ObjParametersTuple* set_of_obj_elements)
 void parse_face_string(char* string, ObjParametersTuple* set_of_obj_elements);
 void parse_normal_string(char* string, ObjParametersTuple* set_of_obj_elements);
 
+void define_face_parameters(char** string, Face* face);
+
+bool string_has_textures(char* string);
+bool string_has_normals(char* string);
+
 int number_of_slashes(char* string);
 
 float parse_float_number(char** string);

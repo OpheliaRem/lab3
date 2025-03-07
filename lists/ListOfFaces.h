@@ -2,10 +2,26 @@
 #define LISTOFFACES
 
 #include "ListOfVertices.h"
+#include "ListOfTextures.h"
+#include "ListOfNormals.h"
 
 typedef struct {
+    int* vertices_indexes;
+    int* textures_indexes;
+    int* normals_indexes;
+} TupleOfFaceIndexes;
+
+typedef struct {
+    TupleOfFaceIndexes* tuple_of_face_indexes;
+
     Vertex* vertices;
     int number_of_vertices;
+
+    Texture* textures;
+    int number_of_textures;
+    
+    Normal* normals;
+    int number_of_normals;
 } Face;
 
 typedef struct {
