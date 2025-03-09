@@ -1,3 +1,6 @@
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
+
 #include <GL/glut.h>
 #include <GL/freeglut.h>
 #include <GL/gl.h>
@@ -11,7 +14,7 @@ float lx = 0.0f, lz = -1.0f;
 float x = 0.0f, z = 5.0f;
 
 void init() {
-    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_DEPTH_TEST | GL_TEXTURE_2D);
     glDisable(GL_LIGHTING); 
     glShadeModel(GL_SMOOTH);
     glClearColor(0.5f, 0.5f, 0.5f, 0.0f); // Серый фон
@@ -58,7 +61,7 @@ void display_function(void) {
 
     glScalef(0.1f, 0.1f, 0.1f);
 
-    glColor3f(0.0f, 0.0f, 1.0f);
+    //glColor3f(0.0f, 0.0f, 1.0f);
     glPointSize(2.0);
 
     glRotatef(angle, 0.0f, 1.0f, 0.0f);

@@ -1,3 +1,4 @@
+#include <GL/gl.h>
 #include "my_obj_parser.h"
 #include "lists/ListOfVertices.h"
 #include "lists/ListOfTextures.h"
@@ -5,7 +6,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <GL/gl.h>
+#include "stb_image.h"
+#include <stddef.h>
+
+GLuint texture_id;
 
 void draw_3d_scene_from_file(char* filename) {
     if (!file_is_present(filename) || !file_is_obj(filename)) {
@@ -40,7 +44,16 @@ void handle_file(FILE* file) {
 
     read_file(file, &tuple);
 
-    draw_model(&tuple);
+    DrawingParameters parameters;
+    parameters.color_r = 0.0;
+    parameters.color_g = 0.0;
+    parameters.color_b = 0.0;
+    parameters.face_mode = GL_FRONT_AND_BACK;
+    parameters.connection_mode = GL_FILL;
+    draw_model(&tuple, &parameters);
+    parameters.color_g = 1.0;
+    parameters.connection_mode = GL_LINE;
+    draw_model(&tuple, &parameters);
 
     free_obj_parameters_tuple(&tuple);
 }
@@ -55,11 +68,14 @@ void read_file(FILE* file, ObjParametersTuple* tuple) {
     }
 }
 
-void draw_model(ObjParametersTuple* tuple) {
+void draw_model(ObjParametersTuple* tuple, DrawingParameters* parameters) {
     for (int i = 0; i < tuple->list_of_faces->size; ++i) {
         int type = define_face_connection_type(tuple->list_of_faces->faces[i].number_of_vertices);
 
-        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+        glColor3f(parameters->color_r, parameters->color_g, parameters->color_b);
+        glPolygonMode(parameters->face_mode, parameters->connection_mode);
+        
+        glBindTexture(GL_TEXTURE_2D, texture_id);
         
         glBegin(type);
 
@@ -71,6 +87,11 @@ void draw_model(ObjParametersTuple* tuple) {
 
 void draw_vertices_of_face(const Face* face) {
     for (int j = 0; j < face->number_of_vertices; ++j) {
+        Texture texture;
+        if (face->number_of_textures != 0) {
+            texture = face->textures[j];
+            glTexCoord2f(texture.u, texture.v);
+        }
         Vertex vertex = face->vertices[j];
         glVertex3f(vertex.x, vertex.y, vertex.z);
     }
@@ -324,4 +345,36 @@ Normal create_normal_with_coordinates(GLfloat* coordinates) {
     normal.y = coordinates[1];
     normal.z = coordinates[2];
     return normal;
+}
+
+void load_texture() {
+    int height, width, channels;
+    unsigned char* image = stbi_load(
+        "/home/artem/programming/c/lab3/resources/cottage_textures/cottage_diffuse.png",
+        &width,
+        &height,
+        &channels,
+        0
+    );
+
+    if (!image) {
+        printf("Failed to load the texture\n");
+        return;
+    }
+
+    glGenTextures(1, &texture_id);
+    //glBindTexture(GL_TEXTURE_2D, textureID);
+
+    // Set texture parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    // Upload the image data to the texture
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
+    //glGenerateMipmap(GL_TEXTURE_2D);
+
+    // Free the image data
+    stbi_image_free(image);
 }

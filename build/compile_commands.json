@@ -1,43 +1,43 @@
 [
 {
   "directory": "/home/artem/programming/c/lab3/build",
-  "command": "/usr/bin/cc   -g -o CMakeFiles/my_obj_parser.dir/my_obj_parser.c.o -c /home/artem/programming/c/lab3/my_obj_parser.c",
+  "command": "/usr/bin/cc  -I/home/artem/programming/c/lab3/libs -g -o CMakeFiles/my_obj_parser.dir/my_obj_parser.c.o -c /home/artem/programming/c/lab3/my_obj_parser.c",
   "file": "/home/artem/programming/c/lab3/my_obj_parser.c",
   "output": "CMakeFiles/my_obj_parser.dir/my_obj_parser.c.o"
 },
 {
   "directory": "/home/artem/programming/c/lab3/build",
-  "command": "/usr/bin/cc   -g -o CMakeFiles/ListOfVertices.dir/lists/ListOfVertices.c.o -c /home/artem/programming/c/lab3/lists/ListOfVertices.c",
+  "command": "/usr/bin/cc  -I/home/artem/programming/c/lab3/libs -g -o CMakeFiles/ListOfVertices.dir/lists/ListOfVertices.c.o -c /home/artem/programming/c/lab3/lists/ListOfVertices.c",
   "file": "/home/artem/programming/c/lab3/lists/ListOfVertices.c",
   "output": "CMakeFiles/ListOfVertices.dir/lists/ListOfVertices.c.o"
 },
 {
   "directory": "/home/artem/programming/c/lab3/build",
-  "command": "/usr/bin/cc   -g -o CMakeFiles/ListOfTextures.dir/lists/ListOfTextures.c.o -c /home/artem/programming/c/lab3/lists/ListOfTextures.c",
+  "command": "/usr/bin/cc  -I/home/artem/programming/c/lab3/libs -g -o CMakeFiles/ListOfTextures.dir/lists/ListOfTextures.c.o -c /home/artem/programming/c/lab3/lists/ListOfTextures.c",
   "file": "/home/artem/programming/c/lab3/lists/ListOfTextures.c",
   "output": "CMakeFiles/ListOfTextures.dir/lists/ListOfTextures.c.o"
 },
 {
   "directory": "/home/artem/programming/c/lab3/build",
-  "command": "/usr/bin/cc   -g -o CMakeFiles/ListOfFaces.dir/lists/ListOfFaces.c.o -c /home/artem/programming/c/lab3/lists/ListOfFaces.c",
+  "command": "/usr/bin/cc  -I/home/artem/programming/c/lab3/libs -g -o CMakeFiles/ListOfFaces.dir/lists/ListOfFaces.c.o -c /home/artem/programming/c/lab3/lists/ListOfFaces.c",
   "file": "/home/artem/programming/c/lab3/lists/ListOfFaces.c",
   "output": "CMakeFiles/ListOfFaces.dir/lists/ListOfFaces.c.o"
 },
 {
   "directory": "/home/artem/programming/c/lab3/build",
-  "command": "/usr/bin/cc   -g -o CMakeFiles/ListOfNormals.dir/lists/ListOfNormals.c.o -c /home/artem/programming/c/lab3/lists/ListOfNormals.c",
+  "command": "/usr/bin/cc  -I/home/artem/programming/c/lab3/libs -g -o CMakeFiles/ListOfNormals.dir/lists/ListOfNormals.c.o -c /home/artem/programming/c/lab3/lists/ListOfNormals.c",
   "file": "/home/artem/programming/c/lab3/lists/ListOfNormals.c",
   "output": "CMakeFiles/ListOfNormals.dir/lists/ListOfNormals.c.o"
 },
 {
   "directory": "/home/artem/programming/c/lab3/build",
-  "command": "/usr/bin/cc   -g -o CMakeFiles/ObjParametersTuple.dir/ObjParametersTuple.c.o -c /home/artem/programming/c/lab3/ObjParametersTuple.c",
+  "command": "/usr/bin/cc  -I/home/artem/programming/c/lab3/libs -g -o CMakeFiles/ObjParametersTuple.dir/ObjParametersTuple.c.o -c /home/artem/programming/c/lab3/ObjParametersTuple.c",
   "file": "/home/artem/programming/c/lab3/ObjParametersTuple.c",
   "output": "CMakeFiles/ObjParametersTuple.dir/ObjParametersTuple.c.o"
 },
 {
   "directory": "/home/artem/programming/c/lab3/build",
-  "command": "/usr/bin/cc   -g -o CMakeFiles/lab3.dir/main.c.o -c /home/artem/programming/c/lab3/main.c",
+  "command": "/usr/bin/cc  -I/home/artem/programming/c/lab3/libs -g -o CMakeFiles/lab3.dir/main.c.o -c /home/artem/programming/c/lab3/main.c",
   "file": "/home/artem/programming/c/lab3/main.c",
   "output": "CMakeFiles/lab3.dir/main.c.o"
 }

@@ -3,7 +3,10 @@
 
 CMakeFiles/my_obj_parser.dir/my_obj_parser.c.o
  /home/artem/programming/c/lab3/my_obj_parser.c
+ /home/artem/programming/c/lab3/DrawingParameters.h
  /home/artem/programming/c/lab3/ObjParametersTuple.h
+ /home/artem/programming/c/lab3/PackedVertex.h
+ /home/artem/programming/c/lab3/libs/stb_image.h
  /home/artem/programming/c/lab3/lists/ListOfFaces.h
  /home/artem/programming/c/lab3/lists/ListOfNormals.h
  /home/artem/programming/c/lab3/lists/ListOfTextures.h

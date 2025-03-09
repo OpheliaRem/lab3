@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include <GL/gl.h>
 #include "ObjParametersTuple.h"
+#include "PackedVertex.h"
+#include "DrawingParameters.h" 
 
 enum InputStringType {
     VERTEX,
@@ -24,7 +26,7 @@ void read_file(FILE* file, ObjParametersTuple* set_of_obj_elements);
 
 int define_face_connection_type(int number_of_vertices_in_face);
 
-void draw_model(ObjParametersTuple* set_of_obj_elements);
+void draw_model(ObjParametersTuple* set_of_obj_elements, DrawingParameters* parameters);
 
 void draw_vertices_of_face(const Face* face);
 
@@ -54,5 +56,13 @@ Texture create_texture_with_parameters(GLfloat* parameters);
 Normal create_normal_with_coordinates(GLfloat* coordinates);
 
 void draw_3d_scene_from_file(char* filename);
+
+void handle_texture(ObjParametersTuple* tuple);
+
+void load_texture();
+
+void update_vertex_buffer(PackedVertex* packed_vertices, int number_of_vertices);
+
+void update_shaders(void);
 
 #endif
